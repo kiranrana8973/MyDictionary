@@ -1,5 +1,6 @@
 package com.dictionaryapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -50,10 +51,14 @@ public class DictionaryActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String key = parent.getItemAtPosition(position).toString(); // Get the current position
                 String meaning = dictionary.get(key);   // Get the meaning of current position key
-                Toast.makeText(DictionaryActivity.this,meaning,Toast.LENGTH_LONG).show();
+
+                // Intent will call MeaningActivity from DictionaryActivity
+                Intent intent = new Intent(DictionaryActivity.this,MeaningActivity.class);
+                // We have to pass the message from this activity to MeaningActivity
+                intent.putExtra("meaning",meaning);
+                startActivity(intent);
             }
         });
     }
 }
-
 
