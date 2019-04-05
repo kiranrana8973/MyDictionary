@@ -22,6 +22,3 @@ public class MeaningActivity extends AppCompatActivity {
         tvMeaning.setText(meaning);
     }
 }
-
-
-
