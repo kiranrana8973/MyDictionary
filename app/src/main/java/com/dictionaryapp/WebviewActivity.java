@@ -19,6 +19,7 @@ public class WebviewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
 
@@ -34,6 +35,7 @@ public class WebviewActivity extends AppCompatActivity {
                     //current value in the text view
                     handler.post(new Runnable() {
                         public void run() {
+
                             progressBar.setProgress(progressStatus);
                             textView.setText(progressStatus+"/"+progressBar.getMax());
                         }
@@ -49,5 +51,3 @@ public class WebviewActivity extends AppCompatActivity {
         }).start();
     }
 }
-
-

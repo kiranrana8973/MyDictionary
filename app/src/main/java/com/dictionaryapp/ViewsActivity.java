@@ -14,10 +14,11 @@ public class ViewsActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_views);
 
-        closeButton = (Button) findViewById(R.id.btnClose);
+        closeButton = findViewById(R.id.btnClose);
         builder = new AlertDialog.Builder(this);
 
         closeButton.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +41,8 @@ public class ViewsActivity extends AppCompatActivity {
                                         Toast.LENGTH_SHORT).show();
                             }
                         });
+
+              //  builder.show();
                 //Creating dialog box
                 AlertDialog alert = builder.create();
                 alert.setTitle("My Title");
