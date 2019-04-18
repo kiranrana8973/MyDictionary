@@ -16,11 +16,7 @@
         </activity>
         <activity android:name=".WebviewActivity"></activity>
         <activity android:name=".DatePickerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".AutoCompleteActivity"></activity>
         <activity android:name=".ViewsActivity" >
@@ -28,7 +24,16 @@
 
         </activity>
         <activity android:name=".MeaningActivity" />
-        <activity android:name=".DictionaryActivity" />
+        <activity android:name=".DictionaryActivity"
+            android:label="Dictionay App"
+            >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

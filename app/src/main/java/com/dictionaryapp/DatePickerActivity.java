@@ -28,8 +28,6 @@ public class DatePickerActivity extends AppCompatActivity {
                 loadTime();
             }
         });
-
-
         tvDOB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,8 +51,6 @@ public class DatePickerActivity extends AppCompatActivity {
         },year,month,day);
         datePickerDialog.show();
     }
-
-
 
     private void loadTime() {
         // Use the current date as the default date in the picker
@@ -81,6 +77,4 @@ public class DatePickerActivity extends AppCompatActivity {
         }, hour, minute, false);
         timePickerDialog.show();
     }
-
-
 }
