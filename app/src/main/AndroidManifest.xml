@@ -4,6 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,25 +16,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RelativeActivity">
+        <activity android:name=".AddWordActivity">
         </activity>
-        <activity android:name=".WebviewActivity"></activity>
-        <activity android:name=".DatePickerActivity">
-
-        </activity>
-        <activity android:name=".AutoCompleteActivity"></activity>
-        <activity android:name=".ViewsActivity" >
-
-
-        </activity>
+        <activity
+            android:name=".WordGameActivity"
+            android:theme="@style/CustomTheme"></activity>
+        <activity android:name=".RelativeActivity" />
+        <activity android:name=".WebviewActivity" />
+        <activity android:name=".DatePickerActivity" />
+        <activity android:name=".AutoCompleteActivity" />
+        <activity android:name=".ViewsActivity" />
         <activity android:name=".MeaningActivity" />
-        <activity android:name=".DictionaryActivity"
-            android:label="Dictionay App"
-            >
+        <activity
+            android:name=".DictionaryActivity"
+            android:label="Dictionay App">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

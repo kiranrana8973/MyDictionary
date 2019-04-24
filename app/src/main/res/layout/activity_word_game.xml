@@ -5,32 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddWordActivity">
+    tools:context=".WordGameActivity">
 
-    <EditText
-        android:id="@+id/etWord"
+
+    <TextView
+        android:id="@+id/txtWord"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter word"
+        android:text="My word Game App "
+        android:gravity="center"
         android:textSize="20sp"
-        android:layout_margin="20dp"
         />
-
-    <EditText
-        android:id="@+id/etMeaning"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter meaning"
-        android:gravity="start"
+        android:text="Points : 0"
+        android:gravity="center"
         android:textSize="20sp"
-        android:layout_weight="1"
-        android:layout_margin="20dp"
         />
 
-    <Button
-        android:id="@+id/btnAddWord"
+    <ListView
+        android:id="@+id/lstOptions"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Word"
-        />
+        android:layout_height="wrap_content"></ListView>
 </LinearLayout>

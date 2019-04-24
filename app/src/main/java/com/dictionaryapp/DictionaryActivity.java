@@ -3,17 +3,17 @@ package com.dictionaryapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class DictionaryActivity extends AppCompatActivity {
 
@@ -26,10 +26,8 @@ public class DictionaryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dictionary);
         lstDictionary = findViewById(R.id.lstDictionary);
         dictionary = new HashMap<>();
-
         // Read All the words from word.txt file
         readFromFile();
-
         ArrayAdapter adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
@@ -52,13 +50,18 @@ public class DictionaryActivity extends AppCompatActivity {
     }
 
     private void readFromFile() {
-        Scanner scan = new Scanner(getResources().openRawResource(R.raw.words));
-        while (scan.hasNextLine()) {
-            String line = scan.nextLine();
-            String[] parts = line.split("->");
-            dictionary.put(parts[0], parts[1]);
+        try {
+            FileInputStream fos = openFileInput("words.txt");
+            InputStreamReader isr = new InputStreamReader(fos);
+            BufferedReader br = new BufferedReader(isr);
+            String line="";
+            while ((line=br.readLine()) != null) {
+                String[] parts = line.split("->");
+                dictionary.put(parts[0], parts[1]);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
-
 
